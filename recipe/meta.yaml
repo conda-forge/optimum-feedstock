@@ -36,6 +36,7 @@ requirements:
     - onnx
     - onnxruntime
     - datasets >=1.2.1
+    - dill >=0.3.5.1
 
 test:
   imports:
