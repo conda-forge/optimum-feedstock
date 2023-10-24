@@ -12,10 +12,10 @@ source:
 
 build:
   number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - optimum-cli = optimum.commands.optimum_cli:main
-  script: "{{ PYTHON }} -m pip install . -vv"
-  noarch: python
 
 requirements:
   host:
@@ -26,8 +26,8 @@ requirements:
     - coloredlogs
     - sympy
     - transformers >=4.26.0
-    - sentencepiece >=0.1.91  # dependency of transformers[sentencepiece]
-    - protobuf  # dependency of transformers[sentencepiece]
+    - sentencepiece >=0.1.91 # dependency of transformers[sentencepiece]
+    - protobuf # dependency of transformers[sentencepiece]
     - packaging
     - pytorch >=1.9
     - numpy
