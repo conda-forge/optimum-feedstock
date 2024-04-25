@@ -1,5 +1,5 @@
 {% set name = "optimum" %}
-{% set version = "1.19.0" %}
+{% set version = "1.19.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/optimum-{{ version }}.tar.gz
-  sha256: a1eb134d70d3093eca68160fcf84c1aff8887726641f3362adca878fda095e3d
+  sha256: fd723b723bb7fe57d98b4afbd5f9e1d923d31a9843eff32331725162994ec849
 
 build:
   number: 0
