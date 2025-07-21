@@ -1,5 +1,5 @@
 {% set name = "optimum" %}
-{% set version = "1.21.2" %}
+{% set version = "1.21.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/optimum-{{ version }}.tar.gz
-  sha256: 037e65d265237809fac69e9003215c60cf6de56e97c62ff7565abab4a94a64ce
+  sha256: 06248e849334e6fc5d8a5aab4f73e20dc859e7084661a42c17949d17eb46b842
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
     - python >={{ python_min }}
     - coloredlogs
     - sympy
-    - transformers >=4.26.0,<4.43.0
+    - transformers >=4.29.0,<4.44.0
     - sentencepiece >=0.1.91,!=0.1.92 # dependency of transformers(sentencepiece)
     - protobuf # dependency of transformers(sentencepiece)
     - packaging
