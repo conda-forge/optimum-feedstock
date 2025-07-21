@@ -26,7 +26,7 @@ requirements:
     - python >={{ python_min }}
     - coloredlogs
     - sympy
-    - transformers >=4.26.0,<4.43.0
+    - transformers >=4.29.0,<4.44.0
     - sentencepiece >=0.1.91,!=0.1.92 # dependency of transformers(sentencepiece)
     - protobuf # dependency of transformers(sentencepiece)
     - packaging
