@@ -166,6 +166,3 @@ Feedstock Maintainers
 * [@shermansiu](https://github.com/shermansiu/)
 * [@sugatoray](https://github.com/sugatoray/)
 
-
-<!-- dummy commit to enable rerendering -->
-
