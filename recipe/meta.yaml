@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/optimum-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/optimum-{{ version }}.tar.gz
   sha256: 7a661a450002c7bb430261b04fe4114de29c6ee3d0b24d562c12c84a76d9d939
 
 build:
@@ -20,17 +20,18 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - setuptools
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - coloredlogs
     - sympy
-    - transformers >=4.26.0
-    - sentencepiece >=0.1.91 # dependency of transformers(sentencepiece)
+    - transformers >=4.26.0,<4.43.0
+    - sentencepiece >=0.1.91,!=0.1.92 # dependency of transformers(sentencepiece)
     - protobuf # dependency of transformers(sentencepiece)
     - packaging
-    - pytorch >=1.9
-    - numpy
+    - pytorch >=1.11
+    - numpy <2.0 # transformers requires numpy<2.0 https://github.com/huggingface/transformers/pull/31569
     - huggingface_hub >=0.8.0
     - datasets
 
@@ -42,6 +43,7 @@ test:
     - optimum-cli --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://huggingface.co/hardware
@@ -70,3 +72,4 @@ extra:
   recipe-maintainers:
     - ilya-lavrenov
     - sugatoray
+    - shermansiu

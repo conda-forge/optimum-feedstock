@@ -163,5 +163,6 @@ Feedstock Maintainers
 =====================
 
 * [@ilya-lavrenov](https://github.com/ilya-lavrenov/)
+* [@shermansiu](https://github.com/shermansiu/)
 * [@sugatoray](https://github.com/sugatoray/)
 
