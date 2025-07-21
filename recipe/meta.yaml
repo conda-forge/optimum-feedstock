@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/optimum-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/optimum-{{ version }}.tar.gz
   sha256: 6cf574226558d400154de1aa231d421e4236432d57c9ee5aa59342f95059b437
 
 build:
@@ -20,12 +20,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - setuptools
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - coloredlogs
     - sympy
-    - transformers >=4.26.0
+    - transformers >=4.26.0,<4.42.0
     - sentencepiece >=0.1.91 # dependency of transformers(sentencepiece)
     - protobuf # dependency of transformers(sentencepiece)
     - packaging
@@ -42,6 +43,7 @@ test:
     - optimum-cli --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://huggingface.co/hardware
@@ -70,3 +72,4 @@ extra:
   recipe-maintainers:
     - ilya-lavrenov
     - sugatoray
+    - shermansiu
