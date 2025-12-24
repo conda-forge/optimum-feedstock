@@ -1,5 +1,5 @@
 {% set name = "optimum" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/optimum-{{ version }}.tar.gz
-  sha256: 4e59e51128ed6311b615dcee84c1559702d82cbd4bae18fd3031f4fe927c484c
+  sha256: 0a2a13f91500e41d34863ffdb08fcb886b3ce68a84a386e59653e3064a45dd4b
 
 build:
   number: 0
@@ -41,6 +41,7 @@ test:
   requires:
     - pip
     - python {{ python_min }}
+    - huggingface_hub <1.0  # Old transformers Conda packages don't enforce the upper bound. Remove once we start using transformers >=5.0.0 in the requirements.
 
 about:
   home: https://huggingface.co/hardware
